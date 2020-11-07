@@ -2,8 +2,8 @@
 
 DOTFILES_DIR=$HOME/dotfiles
 
-if [ ! -d "$DOTFILES_DIR" ]; then
-  git clone https://github.com/masaki-koide/dotfiles.git "$DOTFILES_DIR"
+if [ ! -d $DOTFILES_DIR ]; then
+  git clone https://github.com/masaki-koide/dotfiles.git $DOTFILES_DIR
 else
   cd $DOTFILES_DIR
   git stash
@@ -21,7 +21,7 @@ else
   brew update
 fi
 
-export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+export HOMEBREW_CASK_OPTS=--appdir=~/Applications
 brew bundle
 
 git config --global user.name masaki-koide
