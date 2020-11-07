@@ -13,12 +13,7 @@ fi
 
 cd $DOTFILES_DIR
 
-for f in .??*
-do
-  [[ "$f" == ".git" ]] && continue
-  [[ "$f" == ".DS_Store" ]] && continue
-  ln -snfv "$DOTFILES_DIR/$f" ~/
-done
+./scripts/deploy.sh
 
 if ! type brew > /dev/null 2>&1; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
