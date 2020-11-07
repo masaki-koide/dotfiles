@@ -24,5 +24,7 @@ fi
 export HOMEBREW_CASK_OPTS=--appdir=~/Applications
 brew bundle
 
+# TODO:Move .gitconfig
 git config --global user.name masaki-koide
 git config --global user.email ikasama0324@gmail.com
+git config --global ghq.root ~/src
