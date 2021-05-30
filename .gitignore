@@ -1,1 +1,4 @@
 Brewfile.lock.json
+
+.config
+!.config/fish
