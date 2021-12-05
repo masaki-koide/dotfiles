@@ -2,6 +2,13 @@
 
 DOTFILES_DIR=$HOME/dotfiles
 
+if ! xcode-select --print-path &> /dev/null; then
+  xcode-select --install
+  until xcode-select --print-path &> /dev/null; do
+    sleep 5
+  done
+fi
+
 if [ ! -d $DOTFILES_DIR ]; then
   git clone https://github.com/masaki-koide/dotfiles.git $DOTFILES_DIR
 else
@@ -15,7 +22,7 @@ cd $DOTFILES_DIR
 
 ./scripts/deploy.sh
 
-if ! type brew > /dev/null 2>&1; then
+if ! type brew &> /dev/null; then
   bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
   brew update
